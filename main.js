@@ -14,7 +14,8 @@
     if (countdown < 0) {
       clearInterval(intervalId);
       countdown = 3 * 1000;
-      btn.disabled = false;
+        btn.disabled = false;
+        btn.classList.remove('inactive');
     }
 
     const totalSeconds = Math.floor(countdown / 1000);
@@ -31,7 +32,8 @@
   btn.addEventListener("click", () => {
     endTime = new Date().getTime() + 3 * 1000;
 
-    btn.disabled = true;
+      btn.disabled = true;
+      btn.classList.add('inactive');
 
     //②残り時間を求める
     intervalId = setInterval(check, 100);
